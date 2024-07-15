@@ -11,7 +11,13 @@ func handle_horizontal_flip(move_direction: Vector2) -> void:
 		return
 		
 	sprite.flip_h = false if move_direction.x > 0 else true
-	
+
+func handle_animation(onTp: bool, move_direction: Vector2, direction: float) -> void:
+	if onTp:
+		handle_tp_animation(direction)
+	else:
+		handle_move_animation(move_direction)
+		
 func handle_move_animation(move_direction: Vector2) -> void:
 		handle_horizontal_flip(move_direction)
 		
@@ -34,3 +40,9 @@ func handle_move_animation(move_direction: Vector2) -> void:
 				sprite.play("idle_away")
 			else:
 				sprite.play("idle_toward")
+
+func handle_tp_animation(direction: float) -> void:
+	if direction > 0:
+		sprite.play("idle_away")
+	else:
+		sprite.play("idle_toward")
