@@ -169,6 +169,7 @@ animations = [{
 size = Vector2(6, 5)
 
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("input_component", "movement_component", "animation_component")]
+collision_layer = 3
 script = ExtResource("1_1mxw7")
 input_component = NodePath("InputComponent")
 movement_component = NodePath("MovementComponent")
@@ -176,9 +177,8 @@ animation_component = NodePath("AnimationComponent")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_wrkuo")
-animation = &"idle_away"
+animation = &"idle_toward"
 autoplay = "idle_toward"
-frame_progress = 0.949253
 
 [node name="InputComponent" parent="." instance=ExtResource("3_reb6n")]
 

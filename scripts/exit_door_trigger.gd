@@ -54,35 +54,29 @@ func _on_body_entered(body):
 	if dpos == dlocs["PlayerRoom"]:
 		dir.y = 1
 		newcPos = camera_locs[cpos]
-		newpPos = door_locs[dpos]
 	elif dpos == dlocs["SisterRoom"]:
 		dir.y = 1
 		newcPos = camera_locs[cpos]
-		newpPos = door_locs[dpos]
 	elif dpos == dlocs["PlayerHall"]:
 		dir.y = -1
 		newcPos = camera_locs[clocs["PlayerHall"]][0]
-		newpPos = door_locs[dpos]
 	elif dpos == dlocs["SisterHall"]:
 		dir.y = -1
 		newcPos = camera_locs[clocs["SisterHall"]][0]
-		newpPos = door_locs[dpos]
 	elif dpos == dlocs["SisHallEnt"]:
 		dir.x = -1
 		newcPos = camera_locs[clocs["SisterHall"]][1]
-		newpPos = door_locs[dpos]
 	elif dpos == dlocs["PlaHallEnt"]:
 		dir.x = 1
 		newcPos = camera_locs[clocs["PlayerHall"]][1]
-		newpPos = door_locs[dpos]
 	elif dpos == dlocs["MainHallEnt"]:
 		dir.x = 1
 		newcPos = camera_locs[clocs["MainHall"]][0]
-		newpPos = door_locs[dpos]
 	elif dpos == dlocs["PlaHallExt"]:
 		dir.x = -1
 		newcPos = camera_locs[clocs["PlayerHall"]][2]
-		newpPos = door_locs[dpos]
+	
+	newpPos = door_locs[dpos]
 		
 	camera.move_camera(newcPos)
 	player.move_player(newpPos, dir)
